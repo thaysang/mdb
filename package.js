@@ -4,7 +4,7 @@ Package.describe({
   // Brief, one-line summary of the package.
   summary: '',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/thaysang/mdb.git',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -13,12 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('2.8.0');
   api.use('ecmascript');
+  api.use('accounts-base');
+  api.use('dburles:mongo-collection-instances');
   api.mainModule('mdb.js');
-});
-
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('thaysang:mdb');
-  api.mainModule('mdb-tests.js');
 });
