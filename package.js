@@ -1,6 +1,6 @@
 Package.describe({
   name: 'thaysang:mdb',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
   summary: 'Auto create collection database',
   // URL to the Git repository containing the source code for this package.
@@ -13,7 +13,6 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('2.8.0');
   api.use('ecmascript');
-  api.use('accounts-base');
   api.use('dburles:mongo-collection-instances@0.3.6');
   api.mainModule('mdb.js');
 });
