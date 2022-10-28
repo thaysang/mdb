@@ -17,15 +17,32 @@ export class DB {
         return nameCollection;
     }
 
-    insert(row, col) {
-        let aCol = this.getCollection(col);
-        let aId = aCol.insert(row)
-        return aCol.findOne(aId)
+    findOne(col, ...args) {
+        return this.getCollection(col).findOne(args);
     }
-
-    find(opt, col) {
-        let aCol = this.getCollection(col);
-        return aCol.find(opt).fetch();
+    find(col, ...args) {
+        return this.getCollection(col).find(args).fetch();
     }
-
+    insert(col, ...args) {
+        return this.getCollection(col).insert(args)
+    }
+    update(col, ...args) {
+        return this.getCollection(col).update(args)
+    }
+    upsert(col, ...args) {
+        return this.getCollection(col).upsert(args)
+    }
+    remove(col, ...args) {
+        return this.getCollection(col).remove(args)
+    }
+    createAtIndex(col, ...args) {
+        return this.getCollection(col).createAtIndex(args)
+    }
+    allow(col, ...args) {
+        return this.getCollection(col).allow(args)
+    }
+    denny(col, ...args) {
+        return this.getCollection(col).deny(args)
+    }
+    
 }
