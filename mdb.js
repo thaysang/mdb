@@ -21,6 +21,7 @@ export class DB {
         return this.getCollection(col).findOne(args);
     }
     find(col, ...args) {
+        if (!arg) return  this.getCollection(col).find().fetch();
         return this.getCollection(col).find(args).fetch();
     }
     insert(col, ...args) {
@@ -44,5 +45,5 @@ export class DB {
     denny(col, ...args) {
         return this.getCollection(col).deny(args)
     }
-    
+
 }
